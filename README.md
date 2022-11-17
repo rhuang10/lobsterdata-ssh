@@ -33,7 +33,7 @@ This manual instroduce the steps of constucting LOBSTER limit order book data, u
 4. Start constructing in `screen` terminal
    ```bash
    mkdir output
-   lobBatch -c /home/lobster/.lobsterrc -o /home/your-name/output
+   lobBatch -c /home/lobster/.lobsterrc -b example.batch -o /home/your-name/output
    ```
 5. Once you see the constructing job starts, you can close your connection window.
 6. You could check the progress by logging back, either through `screen`

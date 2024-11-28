@@ -2,7 +2,7 @@
 This manual instroduce the steps of constucting LOBSTER limit order book data, using the `lobBatch` tool on LOBSTER server.
 
 ## Pre-requisites
-* Your institute has legal subscription to LOBSTER data.
+* Your institute has a legal subscription to LOBSTER data.
 * Your have a user account in LOBSTER user server. This must be required separately by emailing LOBSTER support team.
 * A ssh client on you local system.
     - For linux system, a ssh client is typically installed.

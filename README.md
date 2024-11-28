@@ -17,26 +17,32 @@ This manual instroduce the steps of constucting LOBSTER limit order book data, u
    ssh your-name@lobsterdata.com -p 2222
    ``` 
    For the ssh-client with GUI, please consult its documentation.
-2. Create the construction batch file. There is an example file at `/home/lobster/example.batch`.
+2. Create the construction batch file. There is two example files under `/home/lobster/`.
    ```bash
    cp /home/lobster/example.batch .
    ```
+   or  
+   ```bash
+   cp /home/lobster/example_snapshot.batch .
+   ```
+   If you'd like to contract order book interval snapshots.
+   
    Modify the file by `nano` or `vim`
    ```bash
-   nano example.batch
+   nano example_snapshot.batch
    ``` 
-   The fields are `symbol`, `start date`, `end date`, `start time`, `end time`, `book level`, `output format` (please always use 1), `with MPID`
-3. As the constructing could take long time, I would suggest you use `screen`, so that you can disconnect from the server without stopping the job.
+   The fields are `symbol`, `start date`, `end date`, `start time`, `end time`, `book level`, `output format` (please always use 1), `with MPID`, `snapshot_interval_in_seconds`
+4. As the constructing could take long time, I would suggest you use `screen`, so that you can disconnect from the server without stopping the job.
    ```bash
    screen -S constructing
    ```
-4. Start constructing in `screen` terminal
+5. Start constructing in `screen` terminal
    ```bash
    mkdir output
-   lobBatch -c /home/lobster/.lobsterrc -b example.batch -o /home/your-name/output
+   lobBatch -c /home/lobster/.lobsterrc -b example_snapshot.batch -o /home/your-name/output
    ```
-5. Once you see the constructing job starts, you can close your connection window.
-6. You could check the progress by logging back, either through `screen`
+6. Once you see the constructing job starts, you can close your connection window.
+7. You could check the progress by logging back, either through `screen`
    ```bash
    screen -ls # see the active screen terminal
    screen -Rd constructing # reconnect to the terminal
@@ -45,7 +51,7 @@ This manual instroduce the steps of constucting LOBSTER limit order book data, u
    ```bash
    nano lobBatch.log
    ```
-7. Once the constructing job is completed, you can download the data through `sftp` client.
+8. Once the constructing job is completed, you can download the data through `sftp` client.
    ```bash
    sftp -P 2222 your-name@lobsterdata.com
    ```

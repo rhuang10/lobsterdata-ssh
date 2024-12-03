@@ -1,3 +1,5 @@
+## <span style="color:red"> PLEASE DO RUN MULTIPLE BATCH TASK IN ONE ACCOUNT. THE PROGRAM MIGHT CRASH!</span>. This is for protecting the resources for all other LOBSTER users. If you really need to accelerate the custruction, please contact me. 
+
 # Construct LOB on lobsterdata server
 This manual instroduce the steps of constucting LOBSTER limit order book data, using the `lobBatch` tool on LOBSTER server.
 
